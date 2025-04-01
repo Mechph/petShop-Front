@@ -1,4 +1,4 @@
-import './Estilo-serviço.css'
+import './Estilo-servico.css'
 
 function Servico() {
     return(
