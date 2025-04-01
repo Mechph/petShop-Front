@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #00008b, #ffd700);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* barra de inicio, cadastro e login */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #ffdd57;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: auto;
+    gap: 50px;
+    flex-direction: row-reverse; /* imagem de um lado especifico*/
+}
+
+/* TEXTOSSSSSS */
+.text-section {
+    max-width: 450px;
+    text-align: left;
+}
+
+.text-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.text-section p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.text-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffdd57;
+}
+
+/* LOBINHUUUUU */
+.image-section img {
+    width: 250px;
+    height: auto;
+}
+
+/* Rodape, coloquei fixo qqr coisa so arruamr */
+footer {
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+/*Estilizacao do botao s2 */
+.botao {
+    background-color: #ffd700;
+    color: #00008b;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.botao:hover {
+    background-color: #f5c400;
+}
