@@ -1,18 +1,17 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
   return (
     <div>
-      {/* barra de home inicio e cadastro */}
       <nav className="navbar">
         <ul className="nav-list">
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Cadastro</a></li>
+          <li><Link to="/">Início</Link></li>
+          <li><Link to="/Login">Login</Link></li>
+          <li><Link to="/agendamento">Cadastro</Link></li>
         </ul>
       </nav>
 
-      {/* organizacao */}
       <div className="container">
         <div className="content">
           <img src="/lobo-removebg-preview.png" alt="Imagem de boas-vindas" />
