@@ -1,8 +1,16 @@
 import React from "react";
 import "./Login.css";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
+<div>
+<nav className="navbar">
+        <ul className="nav-list">
+          <li><Link to="/">Início</Link></li>
+        </ul>
+      </nav>
+
     <div className="container">
       <div className="login-box">
         <h2>Possui conta!</h2>
@@ -21,6 +29,10 @@ const Login = () => {
         <button className="register-btn">Concluir</button>
       </div>
     </div>
+    <footer>
+        &copy; 2025 PetShop. Todos os direitos reservados.
+      </footer>
+</div>
   );
 };
 
