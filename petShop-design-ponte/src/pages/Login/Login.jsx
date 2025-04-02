@@ -7,7 +7,7 @@ const Login = () => {
 <div>
 <nav className="navbar">
         <ul className="nav-list">
-          <li><Link to="/">Início</Link></li>
+          <li><Link to="/">Voltar ao Início</Link></li>
         </ul>
       </nav>
 
