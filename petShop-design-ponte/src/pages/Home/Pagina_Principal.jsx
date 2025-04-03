@@ -18,7 +18,7 @@ function Home() {
             <h1>Olá, seja bem-vindo(a), é um prazer ter você aqui! 🎉</h1> <br /><br />
             <p>Agora você faz parte da nossa família pet, onde oferecemos os melhores serviços para cuidar do seu bichinho com carinho e dedicação. 🐶🐱✨</p> <br /><br />
             <h2>Agende já um dos nossos serviços para seu Pet</h2>
-            <button className="botao">AGENDAR</button>
+            <button className="botao"><Link to="/agendamento">AGENDAR</Link></button>
           </div>
         </div>
       </div>
