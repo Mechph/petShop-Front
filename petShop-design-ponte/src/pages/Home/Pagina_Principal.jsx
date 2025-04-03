@@ -7,8 +7,7 @@ function Home() {
       <nav className="navbar">
         <ul className="nav-list">
           <li><Link to="/">Início</Link></li>
-          <li><Link to="/Login">Login</Link></li>
-          <li><Link to="/agendamento">Cadastro</Link></li>
+          <li><Link to="/Login">Login ou Cadastro</Link></li>
         </ul>
       </nav>
 
