@@ -2,6 +2,7 @@ import './Estilo-agendamento.css'
 import React from "react"
 import { Link } from 'react-router-dom';
 
+// Implementar uma requisicao do graphQL
 function Agendamento() {
   return (
     <div>

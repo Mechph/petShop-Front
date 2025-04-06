@@ -12,9 +12,10 @@ const Login = () => {
   const [registerPassword, setRegisterPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  
+  // Realizar operacoes que levem o cliente para uma outra tela
   const handleLogin = async () => {
     try {
+      // A rota certo -> /api/login
       const response = await axios.post("http://localhost:8000/api/auth/login", {
         email: loginEmail,
         password: loginPassword
@@ -33,6 +34,7 @@ const Login = () => {
     }
 
     try {
+      // A rota certa -> /api/register
       const response = await axios.post("http://localhost:8000/api/auth/register", {
         email: registerEmail,
         password: registerPassword,
