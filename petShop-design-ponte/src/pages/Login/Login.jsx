@@ -11,17 +11,21 @@ const Login = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const api = axios.create({
+    baseURL: "http://localhost:8080/api"
+  })
 
   // Realizar operacoes que levem o cliente para uma outra tela
   const handleLogin = async () => {
     try {
       // A rota certo -> /api/login
-      const response = await axios.post("http://localhost:8000/api/auth/login", {
+      const response = await api.post("/login", {
         email: loginEmail,
         password: loginPassword
       });
       alert(response.data.message); 
     } catch (error) {
+      console.error(error)
       alert(error.response?.data?.message || "Erro no login");
     }
   };
@@ -35,7 +39,7 @@ const Login = () => {
 
     try {
       // A rota certa -> /api/register
-      const response = await axios.post("http://localhost:8000/api/auth/register", {
+      const response = await api.post("/register", {
         email: registerEmail,
         password: registerPassword,
         nome: "Usuário",
