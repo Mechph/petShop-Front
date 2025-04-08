@@ -11,6 +11,7 @@ const Login = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  
   const api = axios.create({
     baseURL: "http://localhost:8080/api"
   })
@@ -23,7 +24,8 @@ const Login = () => {
         email: loginEmail,
         password: loginPassword
       });
-      alert(response.data.message); 
+      console.log(response.data.token)
+      
     } catch (error) {
       console.error(error)
       alert(error.response?.data?.message || "Erro no login");

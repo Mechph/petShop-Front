@@ -7,7 +7,7 @@ import Cliente from './pages/Cliente/cliente';
 import Agendamento from './pages/Agendamento/agendamento';
 import Pet from './pages/Pet/pet';
 import Servico from './pages/Servico/servico';
-import Login from './pages/Login/login';
+import Login from './pages/Login/Login';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
