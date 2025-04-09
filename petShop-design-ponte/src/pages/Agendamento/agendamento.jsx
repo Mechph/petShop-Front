@@ -3,34 +3,59 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
+/*AgendamentoProp {
+  id: String
+  data: String
+  servico: {
+    id: String
+    nome: String
+    valor: Number
+  }
+  cliente: {
+    id: String
+    nome: String
+  }
+  pets: {
+    id: String
+    nome: String
+  }
+}*/
+
 // Implementar uma requisicao do graphQL
 function Agendamento() {
+  const [agendamentos, setAgendamentos] = useState <> ()
 
   const api = axios.create({
-    baseURL: "http://localhost:8080/api"
+    baseURL: "http://localhost:8080"
   })
 
   // Integração do axios no GraphQl
 
-const FETCH_USERS_QUERY = `
-  query {
-    users {
-      id
-      name
+  const FETCH_USERS_QUERY = `query {
+    agendamentos {
+        id
+        data
+        servico {
+            id
+            nome
+            valor
+        }
+        cliente {
+            id
+            nome
+        }
+        pets {
+            id
+            nome
+        }
     }
-  }
-`;
-
-const FetchData = () => {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  }`;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(
-          'https://your-graphql-endpoint.com/graphql',  // Substitua pelo seu endpoint GraphQL
+        const response = await api.post(
+          '/graphql',  // Substitua pelo seu endpoint GraphQL
           {
             query: FETCH_USERS_QUERY
           },
@@ -40,8 +65,9 @@ const FetchData = () => {
             }
           }
         );
-        
-        setUsers(response.data.data.users); // Aqui você acessa os dados retornados da query
+
+        console.log(response.data.data)
+
       } catch (err) {
         setError(err);
       } finally {
@@ -52,38 +78,23 @@ const FetchData = () => {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
   return (
     <div>
-      <h2>Users:</h2>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-  return (
-    <div>
-    <nav className="navbar">
+      <nav className="navbar">
         <ul className="nav-list">
-        <li><Link to="/">Voltar ao Início</Link></li>
+          <li><Link to="/">Voltar ao Início</Link></li>
         </ul>
-    </nav>
-    <div className='container'>
-      <div className="register-box">
-        <h2>Criar Agendamento!</h2>
-        <div className="avatar"></div>
-        <input type="text" placeholder="Tipo de Serviço*" />
-        <input type="text" placeholder="Nome do Cliente*" />
-        <input type="text" placeholder="Nome do Pet*" />
-        <input type="email" placeholder="E-mail*" />
-        <input type="password" placeholder="Senha*" />
-        <button className="register-btn">Concluir Agendamento</button>
+      </nav>
+      <div className='container'>
+        <div className="register-box">
+          <h2>Criar Agendamento!</h2>
+          <div className="avatar"></div>
+          <input type="text" placeholder="Tipo de Serviço*" />
+          <input type="text" placeholder="Nome do Cliente*" />
+          <input type="text" placeholder="Nome do Pet*" />
+          <input type="email" placeholder="E-mail*" />
+          <input type="password" placeholder="Senha*" />
+          <button className="register-btn">Concluir Agendamento</button>
         </div>
       </div>
       <footer>&copy; 2025 PetShop. Todos os direitos reservados.</footer>
